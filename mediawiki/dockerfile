@@ -1,0 +1,6 @@
+FROM mediawiki
+
+COPY ["assets/","/var/www/html/resources/assets"]
+COPY ["extensions/","/var/www/html/extensions/"]
+
+EXPOSE 80
