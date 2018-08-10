@@ -24,7 +24,4 @@ services:
       MYSQL_USER: wikiuser
       MYSQL_PASSWORD: example
       MYSQL_ROOT_PASSWORD: password
-  restbase:
-    image: wikitolearn/restbase
-    
 
