@@ -2,5 +2,7 @@ FROM mediawiki:1.31
 
 COPY ["assets/","/var/www/html/resources/assets"]
 COPY ["extensions/","/var/www/html/extensions/"]
+COPY ["skins/","/var/www/html/skins/"]
+
 
 EXPOSE 80

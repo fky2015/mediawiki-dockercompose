@@ -46,8 +46,8 @@ $wgEnableUserEmail = true; # UPO
 $wgEmergencyContact = "apache@no-171.tk";
 $wgPasswordSender = "apache@no-171.tk";
 
-$wgEnotifUserTalk = false; # UPO
-$wgEnotifWatchlist = false; # UPO
+$wgEnotifUserTalk = true; # UPO
+$wgEnotifWatchlist = true; # UPO
 $wgEmailAuthentication = true;
 
 ## Database settings
@@ -79,7 +79,7 @@ $wgUseInstantCommons = true;
 # Periodically send a pingback to https://www.mediawiki.org/ with basic data
 # about this MediaWiki instance. The Wikimedia Foundation shares this data
 # with MediaWiki developers to help guide future development efforts.
-$wgPingback = false;
+$wgPingback = true;
 
 ## If you use ImageMagick (or any other shell command) on a
 ## Linux server, this will need to be set to the name of an
@@ -94,14 +94,14 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "zh-cn";
 
-$wgSecretKey = "a128b8e558cc261a1a3ddc9e4b3758a867015419b08f6eea51ec72f06e5bd5b8";
+$wgSecretKey = "65483c137837886b58dc91a0f152b99e1748a49eaef7c952840c271e36cda374";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "cbf1a4db34f03071";
+$wgUpgradeKey = "578f3170f9acbb3d";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -115,12 +115,11 @@ $wgRightsIcon = "";
 $wgDiff3 = "/usr/bin/diff3";
 
 # The following permissions were set based on your choice in the installer
-$wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
-$wgDefaultSkin = "timeless";
+$wgDefaultSkin = "vector";
 
 # Enabled skins.
 # The following skins were automatically enabled:
