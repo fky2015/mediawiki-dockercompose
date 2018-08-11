@@ -41,6 +41,6 @@ services:
       MEDIAWIKI_URL: http://mediawiki
       PARSOID_URL: http://parsoid:8000
   mem:
-    build: memcached
+    image: memcached
     expose: 
       - 11211
