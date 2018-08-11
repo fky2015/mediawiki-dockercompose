@@ -1,0 +1,18 @@
+FROM alpine:latest
+LABEL maintainer="loveress01@gmail.com"
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
+    && apk upgrade && apk update \
+    && apk add nodejs git
+
+COPY . /src
+
+WORKDIR /src/restbase-0.19.2
+
+RUN npm install
+
+COPY config.yaml .
+
+EXPOSE 7231
+
+CMD [ "node","./bin/server.js" ]

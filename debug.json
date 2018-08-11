@@ -1,0 +1,40 @@
+{
+    "name": "restbase",
+    "hostname": "host.ali",
+    "pid": 22501,
+    "level": 40,
+    "err": {
+        "message": "404: not_found#route",
+        "name": "restbase",
+        "stack": "HTTPError: 404: not_found#route\n    at HyperSwitch._request (/root/work/restbase/node_modules/hyperswitch/lib/hyperswitch.js:267:19)\n    at _createFilteredHandler (/root/work/restbase/node_modules/hyperswitch/lib/hyperswitch.js:171:26)\n    at tryCatcher (/root/work/restbase/node_modules/bluebird/js/release/util.js:16:23)\n    at /root/work/restbase/node_modules/bluebird/js/release/method.js:15:34\n    at handlerWrapper (/root/work/restbase/node_modules/hyperswitch/lib/hyperswitch.js:394:37)\n    at next (/root/work/restbase/node_modules/hyperswitch/lib/hyperswitch.js:380:42)\n    at Object.module.exports [as filter] (/root/work/restbase/node_modules/hyperswitch/lib/filters/http.js:24:16)\n    at handlerWrapper (/root/work/restbase/node_modules/hyperswitch/lib/hyperswitch.js:392:27)\n    at /root/work/restbase/node_modules/hyperswitch/lib/hyperswitch.js:398:28\n    at HyperSwitch._filteredRequest (/root/work/restbase/node_modules/hyperswitch/lib/hyperswitch.js:172:19)\n    at HyperSwitch.(anonymous function) [as post] (/root/work/restbase/node_modules/hyperswitch/lib/hyperswitch.js:432:21)\n    at mwUtil.getSiteInfo.then (/root/work/restbase/sys/parsoid.js:148:22)\n    at tryCatcher (/root/work/restbase/node_modules/bluebird/js/release/util.js:16:23)\n    at Promise._settlePromiseFromHandler (/root/work/restbase/node_modules/bluebird/js/release/promise.js:512:31)\n    at Promise._settlePromise (/root/work/restbase/node_modules/bluebird/js/release/promise.js:569:18)\n    at Promise._settlePromise0 (/root/work/restbase/node_modules/bluebird/js/release/promise.js:614:10)",
+        "status": 404,
+        "body": {
+            "type": "not_found#route",
+            "title": "Not found.",
+            "internalURI": "/localhost/sys/events/",
+            "method": "post",
+            "depth": 2
+        },
+        "root_req": {
+            "method": "get",
+            "uri": "/localhost/v1/page/html/Main_Page?redirect=false",
+            "headers": {
+                "cache-control": "no-cache",
+                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36",
+                "api-user-agent": "VisualEditor-MediaWiki/1.31.0",
+                "x-client-ip": "::ffff:114.247.56.178",
+                "x-forwarded-for": "::ffff:114.247.56.178",
+                "x-request-id": "5be75fb9-9c8a-11e8-8a26-caa6ae578eaf",
+                "x-request-class": "external"
+            }
+        },
+        "request_id": "5be75fb9-9c8a-11e8-8a26-caa6ae578eaf",
+        "api_path": "/localhost/v1/page/html/{title}",
+        "levelPath": "warn/bg-updates"
+    },
+    "msg": "404: not_found#route",
+    "time": "2018-08-10T10:44:30.665Z",
+    "v": 0
+}
+
+

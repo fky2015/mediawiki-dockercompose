@@ -1,0 +1,33 @@
+FROM node:6
+LABEL maintainer="loveress01@gmail.com"
+# refer to 
+# https://github.com/benhutchins/docker-parsoid/blob/master/Dockerfile
+
+
+# you can change this two
+ARG PARSOID_VERSION=v0.9.0
+ENV WORKDIR /usr/src/parsoid
+
+WORKDIR $WORKDIR
+
+RUN npm config set registry https://registry.npm.taobao.org \
+    && npm update
+
+RUN set -x; \  
+    git clone \
+      --depth 1 \
+      -b ${PARSOID_VERSION} \
+      https://github.com/wikimedia/parsoid \
+      $WORKDIR \
+    && rm -rf $WORKDIR/.git/
+
+RUN npm install && cache clean --force
+
+RUN mkdir -p /data
+COPY config.yaml /data
+VOLUME /data
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+CMD [ "node","server.js" ]
