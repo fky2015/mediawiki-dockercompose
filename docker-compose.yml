@@ -24,4 +24,17 @@ services:
       MYSQL_USER: wikiuser
       MYSQL_PASSWORD: example
       MYSQL_ROOT_PASSWORD: password
-
+  parsoid:
+    build: parsoid-docker/
+    environment:
+      MEDIAWIKI_API_URL: http://mediawiki:80/api.php
+      MEDIAWIKI_DOMAIN: localhost
+      MEDIAWIKI_PREFIX: localhost
+    ports:
+      - 8000:8000
+  restbase:
+    build: restbase-docker/
+    environment:
+      MEDIAWIKI_API_URL: uri: http://mediawiki/api.php
+      MEDIAWIKI_URL: http://mediawiki
+      PARSOID_URL: http://parsoid:8000
