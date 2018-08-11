@@ -10,7 +10,9 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-RUN apk add --no-cache git \
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
+    && apk update \
+    && apk add --no-cache git \
     && npm install -g --only=production restbase@${RESTBASE_VERSION} restbase-mod-table-sqlite \
     && npm cache clean --force \
     && rm -rf /tmp/npm* /root/.node* /root/.npm
