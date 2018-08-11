@@ -1,8 +1,7 @@
 FROM centos:6
 LABEL maintainer="loveress01@gmail.com"
-# refer to 
 
-# you can change this two
+# basically, it will build server according to the mediawiki setup guide
 
 WORKDIR /root
 

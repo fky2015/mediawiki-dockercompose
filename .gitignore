@@ -1,4 +1,2 @@
 mediawiki/extensions/*
 private*
-/parsoid/parsoid*
-/restbase/restbase*
