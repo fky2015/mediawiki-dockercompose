@@ -9,8 +9,6 @@ services:
     restart: always
     ports:
       - 8088:80
-    volumes: 
-      - /root/html/:/var/www/html/
     # volumes:
     #   - /var/www/html/images
       # After initial setup, download LocalSettings.php to the same directory as
