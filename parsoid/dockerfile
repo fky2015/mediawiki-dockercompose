@@ -2,8 +2,9 @@ FROM centos:6
 LABEL maintainer="loveress01@gmail.com"
 # refer to 
 
-WORKDIR /root/parsoid
 # you can change this two
+
+WORKDIR /root
 
 RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo \
 &&  yum makecache \
@@ -15,12 +16,16 @@ RUN git clone --recursive https://gerrit.wikimedia.org/r/p/mediawiki/services/pa
 && npm install \
 && npm cache clean --force
 
+WORKDIR /root/parsoid
+
 RUN mkdir -p /data
 COPY . /data/
 VOLUME /data/
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+
+EXPOSE 8000
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "node","server.js" ]
