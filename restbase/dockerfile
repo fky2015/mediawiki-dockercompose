@@ -1,18 +1,34 @@
-FROM alpine:latest
+FROM centos:6
 LABEL maintainer="loveress01@gmail.com"
+# refer to 
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
-    && apk upgrade && apk update \
-    && apk add nodejs git
+# you can change this two
 
-COPY . /src
+WORKDIR /root
 
-WORKDIR /src/restbase-0.19.2
+RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo \
+&& curl -sL https://rpm.nodesource.com/setup_6.x | bash - \
+&&  yum makecache \
+&& yum install -y nodejs git
 
-RUN npm install
 
-COPY config.yaml .
+RUN cd /root \
+&& git clone https://github.com/wikimedia/restbase.git \
+&& rm -rf restbase/.git/ \
+&& cd restbase \
+&& npm install \
+&& npm cache clean --force
+
+WORKDIR /root/restbase
+
+RUN mkdir -p /data
+COPY . /data/
+VOLUME /data/
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 7231
 
+ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "node","./bin/server.js" ]
