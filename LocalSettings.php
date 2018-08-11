@@ -134,40 +134,40 @@ wfLoadSkin( 'Vector' );
 # to LocalSettings.php. Check specific extension documentation for more details.
 # The following extensions were automatically enabled:
 wfLoadExtension( 'AntiSpoof' );
-require_once "$IP/extensions/Arrays/Arrays.php";
+// require_once "$IP/extensions/Arrays/Arrays.php";
 wfLoadExtension( 'CategoryTree' );
-wfLoadExtension( 'CheckUser' );
+// wfLoadExtension( 'CheckUser' );
 wfLoadExtension( 'Cite' );
-wfLoadExtension( 'CiteThisPage' );
+// wfLoadExtension( 'CiteThisPage' );
 wfLoadExtension( 'CodeEditor' );
 require_once "$IP/extensions/ContributionScores/ContributionScores.php";
-wfLoadExtension( 'Disambiguator' );
+// wfLoadExtension( 'Disambiguator' );
 wfLoadExtension( 'Echo' );
 // wfLoadExtension( 'Gadgets' );
 // require_once "$IP/extensions/googleAnalytics/googleAnalytics.php";
-wfLoadExtension( 'ImageMap' );
+// wfLoadExtension( 'ImageMap' );
 wfLoadExtension( 'InputBox' );
-wfLoadExtension( 'Interwiki' );
+// wfLoadExtension( 'Interwiki' );
 wfLoadExtension( 'LocalisationUpdate' );
 wfLoadExtension( 'Math' );
 require_once "$IP/extensions/MinervaNeue/MinervaNeue.php";
 wfLoadExtension( 'MobileFrontend' );
 wfLoadExtension( 'MsUpload' );
-wfLoadExtension( 'MultimediaViewer' );
+// wfLoadExtension( 'MultimediaViewer' );
 wfLoadExtension( 'Nuke' );
-wfLoadExtension( 'OATHAuth' );
+// wfLoadExtension( 'OATHAuth' );
 wfLoadExtension( 'ParserFunctions' );
-wfLoadExtension( 'PdfHandler' );
-wfLoadExtension( 'PinyinSort' );
+// wfLoadExtension( 'PdfHandler' );
+// wfLoadExtension( 'PinyinSort' );
 wfLoadExtension( 'Poem' );
 wfLoadExtension( 'Renameuser' );
 wfLoadExtension( 'ReplaceText' );
-wfLoadExtension( 'RevisionSlider' );
-wfLoadExtension( 'SpamBlacklist' );
+// wfLoadExtension( 'RevisionSlider' );
+// wfLoadExtension( 'SpamBlacklist' );
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'Thanks' );
-wfLoadExtension( 'TitleBlacklist' );
-wfLoadExtension( 'UserMerge' );
+// wfLoadExtension( 'TitleBlacklist' );
+// wfLoadExtension( 'UserMerge' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'WikiLove' );
@@ -195,6 +195,21 @@ wfLoadExtension( 'WikiLove' );
 wfLoadExtension( 'MobileFrontend' );
 $wgMFAutodetectMobileView = true;
 
+######## Start of Memcached settings
+$wgMainCacheType = CACHE_MEMCACHED;
+$wgParserCacheType = CACHE_MEMCACHED; # optional
+$wgMessageCacheType = CACHE_MEMCACHED; # optional
+$wgMemCachedServers = array( "mem:11211" );
+
+$wgSessionsInObjectCache = true; # optional
+$wgSessionCacheType = CACHE_MEMCACHED; # optional
+
+######## Start of Memcached settings
+
+
+
+
+
 
 // OPTIONAL: Enable VisualEditor's experimental code features
 #$wgDefaultUserOptions['visualeditor-enable-experimental'] = 1;
@@ -219,5 +234,5 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
 );
 
 $wgDefaultUserOptions['visualeditor-enable'] = 1;
-$wgLogo="assets/bit.jpg";
+$wgLogo="/resources/assets/bit.jpg";
 

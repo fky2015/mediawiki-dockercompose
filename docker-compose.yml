@@ -40,3 +40,7 @@ services:
       MEDIAWIKI_API_URL: http://mediawiki/api.php
       MEDIAWIKI_URL: http://mediawiki
       PARSOID_URL: http://parsoid:8000
+  mem:
+    build: memcached
+    expose: 
+      - 11211
