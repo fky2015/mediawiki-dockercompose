@@ -13,8 +13,9 @@ RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Cen
 
 RUN cd /root \
 && git clone https://github.com/wikimedia/restbase.git \
-&& rm -rf restbase/.git/ \
-&& cd restbase \
+&& rm -rf restbase/.git/ 
+
+RUN cd restbase \
 && npm install \
 && npm cache clean --force
 
