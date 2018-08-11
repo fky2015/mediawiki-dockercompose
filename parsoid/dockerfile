@@ -7,11 +7,15 @@ LABEL maintainer="loveress01@gmail.com"
 WORKDIR /root
 
 RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo \
+&& curl -sL https://rpm.nodesource.com/setup_6.x | bash - \
 &&  yum makecache \
-&&  yum install git nodejs
+&& yum install -y nodejs git
 
-RUN git clone --recursive https://gerrit.wikimedia.org/r/p/mediawiki/services/parsoid/deploy \
+
+RUN cd /root \
+&& git clone --recursive https://gerrit.wikimedia.org/r/p/mediawiki/services/parsoid/deploy \
 && git clone https://gerrit.wikimedia.org/r/p/mediawiki/services/parsoid \
+&& rm -rf deploy/.git/ deploy/src/.git/ parsoid/.git/ \
 && cd parsoid \
 && npm install \
 && npm cache clean --force
