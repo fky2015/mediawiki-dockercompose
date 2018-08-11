@@ -35,6 +35,6 @@ services:
   restbase:
     build: restbase-docker/
     environment:
-      MEDIAWIKI_API_URL: uri: http://mediawiki/api.php
+      MEDIAWIKI_API_URL: http://mediawiki/api.php
       MEDIAWIKI_URL: http://mediawiki
       PARSOID_URL: http://parsoid:8000
