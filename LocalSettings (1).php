@@ -65,7 +65,7 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 
 ## Shared memory settings
 $wgMainCacheType = CACHE_ACCEL;
-$wgMemCachedServers = [];
+$wgMemCachedServers = [ 'mem:11211' ];
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
@@ -74,12 +74,12 @@ $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
-$wgUseInstantCommons = true;
+$wgUseInstantCommons = false;
 
 # Periodically send a pingback to https://www.mediawiki.org/ with basic data
 # about this MediaWiki instance. The Wikimedia Foundation shares this data
 # with MediaWiki developers to help guide future development efforts.
-$wgPingback = true;
+$wgPingback = false;
 
 ## If you use ImageMagick (or any other shell command) on a
 ## Linux server, this will need to be set to the name of an
@@ -94,14 +94,14 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "zh-cn";
 
-$wgSecretKey = "6faabbe8ac910f65dff3a1c63169cef7d318872f43f7d1538ce0d67da8304774";
+$wgSecretKey = "cb3e9afc0d6003cf870eedb278e132ff7e9babcc3e244468cf5624c9edebafbc";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "10cb01f57fd79ef6";
+$wgUpgradeKey = "23c01818560cfd8f";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -133,42 +133,20 @@ wfLoadSkin( 'Vector' );
 # wfLoadExtensions('ExtensionName');
 # to LocalSettings.php. Check specific extension documentation for more details.
 # The following extensions were automatically enabled:
-wfLoadExtension( 'AntiSpoof' );
-require_once "$IP/extensions/Arrays/Arrays.php";
 wfLoadExtension( 'CategoryTree' );
-wfLoadExtension( 'CheckUser' );
 wfLoadExtension( 'Cite' );
-wfLoadExtension( 'CiteThisPage' );
 wfLoadExtension( 'CodeEditor' );
-wfLoadExtension( 'ConfirmEdit' );
-require_once "$IP/extensions/ContributionScores/ContributionScores.php";
-wfLoadExtension( 'Disambiguator' );
 wfLoadExtension( 'Echo' );
-wfLoadExtension( 'Gadgets' );
-require_once "$IP/extensions/googleAnalytics/googleAnalytics.php";
 wfLoadExtension( 'ImageMap' );
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'Interwiki' );
-wfLoadExtension( 'LocalisationUpdate' );
 wfLoadExtension( 'Math' );
 require_once "$IP/extensions/MinervaNeue/MinervaNeue.php";
 wfLoadExtension( 'MobileFrontend' );
 wfLoadExtension( 'MsUpload' );
-wfLoadExtension( 'MultimediaViewer' );
-wfLoadExtension( 'Nuke' );
-wfLoadExtension( 'OATHAuth' );
-wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'PdfHandler' );
-wfLoadExtension( 'PinyinSort' );
-wfLoadExtension( 'Poem' );
-wfLoadExtension( 'Renameuser' );
-wfLoadExtension( 'ReplaceText' );
-wfLoadExtension( 'RevisionSlider' );
-wfLoadExtension( 'SpamBlacklist' );
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'Thanks' );
-wfLoadExtension( 'TitleBlacklist' );
-wfLoadExtension( 'UserMerge' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'WikiLove' );
