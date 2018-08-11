@@ -29,7 +29,7 @@ $wgSitename = "BIT-wiki";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://59.110.233.235:8088";
+$wgServer = "http://no-171.tk:8088";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -43,8 +43,8 @@ $wgLogo = "$wgResourceBasePath/resources/assets/wiki.png";
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "apache@59.110.233.235";
-$wgPasswordSender = "apache@59.110.233.235";
+$wgEmergencyContact = "apache@no-171.tk";
+$wgPasswordSender = "apache@no-171.tk";
 
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
@@ -79,7 +79,7 @@ $wgUseInstantCommons = true;
 # Periodically send a pingback to https://www.mediawiki.org/ with basic data
 # about this MediaWiki instance. The Wikimedia Foundation shares this data
 # with MediaWiki developers to help guide future development efforts.
-$wgPingback = true;
+$wgPingback = false;
 
 ## If you use ImageMagick (or any other shell command) on a
 ## Linux server, this will need to be set to the name of an
@@ -92,16 +92,16 @@ $wgShellLocale = "C.UTF-8";
 #$wgCacheDirectory = "$IP/cache";
 
 # Site language code, should be one of the list in ./languages/data/Names.php
-$wgLanguageCode = "en";
+$wgLanguageCode = "zh-cn";
 
-$wgSecretKey = "793ac073c05c32533b5eede5214f1313ac53569357eae334f8ce7c43bc4b3571";
+$wgSecretKey = "a128b8e558cc261a1a3ddc9e4b3758a867015419b08f6eea51ec72f06e5bd5b8";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "488683bb457d2326";
+$wgUpgradeKey = "cbf1a4db34f03071";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -115,11 +115,13 @@ $wgRightsIcon = "";
 $wgDiff3 = "/usr/bin/diff3";
 
 # The following permissions were set based on your choice in the installer
+$wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
-$wgMFDefaultSkinClass = 'SkinTimeless'; // use Timeless skin
+$wgDefaultSkin = "timeless";
+
 # Enabled skins.
 # The following skins were automatically enabled:
 wfLoadSkin( 'MonoBook' );
@@ -143,7 +145,7 @@ wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'Interwiki' );
 wfLoadExtension( 'LocalisationUpdate' );
 wfLoadExtension( 'Math' );
-
+wfLoadExtension( 'MobileFrontend' );
 wfLoadExtension( 'MsUpload' );
 wfLoadExtension( 'MultimediaViewer' );
 wfLoadExtension( 'OATHAuth' );
@@ -161,6 +163,8 @@ wfLoadExtension( 'WikiEditor' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
+
+
 
 wfLoadExtension( 'MobileFrontend' );
 $wgMFAutodetectMobileView = true;

@@ -34,6 +34,8 @@ services:
       - 8000:8000
   restbase:
     build: restbase-docker/
+    ports:
+      - 7231:7231
     environment:
       MEDIAWIKI_API_URL: http://mediawiki/api.php
       MEDIAWIKI_URL: http://mediawiki
