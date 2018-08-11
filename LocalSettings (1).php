@@ -52,7 +52,7 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "database";
+$wgDBserver = "59.110.233.235";
 $wgDBname = "my_wiki";
 $wgDBuser = "root";
 $wgDBpassword = "password";
@@ -94,14 +94,14 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "zh-cn";
 
-$wgSecretKey = "65483c137837886b58dc91a0f152b99e1748a49eaef7c952840c271e36cda374";
+$wgSecretKey = "6faabbe8ac910f65dff3a1c63169cef7d318872f43f7d1538ce0d67da8304774";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "578f3170f9acbb3d";
+$wgUpgradeKey = "10cb01f57fd79ef6";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -123,6 +123,7 @@ $wgDefaultSkin = "vector";
 
 # Enabled skins.
 # The following skins were automatically enabled:
+wfLoadSkin( 'MinervaNeue' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
@@ -132,32 +133,45 @@ wfLoadSkin( 'Vector' );
 # wfLoadExtensions('ExtensionName');
 # to LocalSettings.php. Check specific extension documentation for more details.
 # The following extensions were automatically enabled:
+wfLoadExtension( 'AntiSpoof' );
+require_once "$IP/extensions/Arrays/Arrays.php";
 wfLoadExtension( 'CategoryTree' );
+wfLoadExtension( 'CheckUser' );
 wfLoadExtension( 'Cite' );
 wfLoadExtension( 'CiteThisPage' );
 wfLoadExtension( 'CodeEditor' );
 wfLoadExtension( 'ConfirmEdit' );
+require_once "$IP/extensions/ContributionScores/ContributionScores.php";
+wfLoadExtension( 'Disambiguator' );
 wfLoadExtension( 'Echo' );
 wfLoadExtension( 'Gadgets' );
+require_once "$IP/extensions/googleAnalytics/googleAnalytics.php";
 wfLoadExtension( 'ImageMap' );
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'Interwiki' );
 wfLoadExtension( 'LocalisationUpdate' );
 wfLoadExtension( 'Math' );
+require_once "$IP/extensions/MinervaNeue/MinervaNeue.php";
 wfLoadExtension( 'MobileFrontend' );
 wfLoadExtension( 'MsUpload' );
 wfLoadExtension( 'MultimediaViewer' );
+wfLoadExtension( 'Nuke' );
 wfLoadExtension( 'OATHAuth' );
 wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'PdfHandler' );
+wfLoadExtension( 'PinyinSort' );
 wfLoadExtension( 'Poem' );
 wfLoadExtension( 'Renameuser' );
 wfLoadExtension( 'ReplaceText' );
+wfLoadExtension( 'RevisionSlider' );
 wfLoadExtension( 'SpamBlacklist' );
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
+wfLoadExtension( 'Thanks' );
 wfLoadExtension( 'TitleBlacklist' );
+wfLoadExtension( 'UserMerge' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
+wfLoadExtension( 'WikiLove' );
 
 
 # End of automatically generated settings.
