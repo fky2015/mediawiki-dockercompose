@@ -46,13 +46,13 @@ $wgEnableUserEmail = true; # UPO
 $wgEmergencyContact = "apache@no-171.tk";
 $wgPasswordSender = "apache@no-171.tk";
 
-$wgEnotifUserTalk = true; # UPO
-$wgEnotifWatchlist = true; # UPO
+$wgEnotifUserTalk = false; # UPO
+$wgEnotifWatchlist = false; # UPO
 $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "59.110.233.235";
+$wgDBserver = "database";
 $wgDBname = "my_wiki";
 $wgDBuser = "root";
 $wgDBpassword = "password";
@@ -64,7 +64,7 @@ $wgDBprefix = "";
 $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_ACCEL;
+$wgMainCacheType = CACHE_MEMCACHED;
 $wgMemCachedServers = [ 'mem:11211' ];
 
 ## To enable image uploads, make sure the 'images' directory
@@ -74,12 +74,12 @@ $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
-$wgUseInstantCommons = false;
+$wgUseInstantCommons = true;
 
 # Periodically send a pingback to https://www.mediawiki.org/ with basic data
 # about this MediaWiki instance. The Wikimedia Foundation shares this data
 # with MediaWiki developers to help guide future development efforts.
-$wgPingback = false;
+$wgPingback = true;
 
 ## If you use ImageMagick (or any other shell command) on a
 ## Linux server, this will need to be set to the name of an
@@ -94,14 +94,14 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "zh-cn";
 
-$wgSecretKey = "cb3e9afc0d6003cf870eedb278e132ff7e9babcc3e244468cf5624c9edebafbc";
+$wgSecretKey = "22edfb59dc97a57c4400e538293d7b08f33a09042c93d85e6e05c27782712399";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "23c01818560cfd8f";
+$wgUpgradeKey = "634b73713c82b3ca";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -133,20 +133,47 @@ wfLoadSkin( 'Vector' );
 # wfLoadExtensions('ExtensionName');
 # to LocalSettings.php. Check specific extension documentation for more details.
 # The following extensions were automatically enabled:
+wfLoadExtension( 'AJAXPoll' );
+wfLoadExtension( 'AntiSpoof' );
 wfLoadExtension( 'CategoryTree' );
+wfLoadExtension( 'CheckUser' );
 wfLoadExtension( 'Cite' );
+wfLoadExtension( 'CiteThisPage' );
 wfLoadExtension( 'CodeEditor' );
+wfLoadExtension( 'CodeMirror' );
+wfLoadExtension( 'ConfirmEdit' );
+require_once "$IP/extensions/ContributionScores/ContributionScores.php";
+wfLoadExtension( 'Disambiguator' );
 wfLoadExtension( 'Echo' );
+wfLoadExtension( 'Gadgets' );
+require_once "$IP/extensions/googleAnalytics/googleAnalytics.php";
+wfLoadExtension( 'HostStats' );
 wfLoadExtension( 'ImageMap' );
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'Interwiki' );
+wfLoadExtension( 'Linter' );
+wfLoadExtension( 'LocalisationUpdate' );
 wfLoadExtension( 'Math' );
-require_once "$IP/extensions/MinervaNeue/MinervaNeue.php";
 wfLoadExtension( 'MobileFrontend' );
 wfLoadExtension( 'MsUpload' );
+wfLoadExtension( 'MultiBoilerplate' );
+wfLoadExtension( 'MultimediaViewer' );
+wfLoadExtension( 'Nuke' );
+wfLoadExtension( 'OATHAuth' );
+wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'PdfHandler' );
+wfLoadExtension( 'PinyinSort' );
+wfLoadExtension( 'Poem' );
+wfLoadExtension( 'Renameuser' );
+wfLoadExtension( 'ReplaceText' );
+wfLoadExtension( 'RevisionSlider' );
+wfLoadExtension( 'Score' );
+require_once "$IP/extensions/SocialProfile/SocialProfile.php";
+wfLoadExtension( 'SpamBlacklist' );
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'Thanks' );
+wfLoadExtension( 'TitleBlacklist' );
+wfLoadExtension( 'UserMerge' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'WikiLove' );
@@ -157,19 +184,25 @@ wfLoadExtension( 'WikiLove' );
 
 
 
-
+########################----------------sadfasdfasfsadfsafdasfasdfasfdasfd----#####
 
 
 #######  Start  of  Extension:ConfirmEdit
 
 # 在默认配置中也有这个配置, 也许需要删除原有的, 也许不需要
-// wfLoadExtension( ['ConfirmEdit','ConfirmEdit/ReCaptcha'] );
-// require_once "$IP/extensions/ConfirmEdit/ConfirmEdit.php";
-// require_once "$IP/extensions/ConfirmEdit/ReCaptcha.php";
+// wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
+// $wgCaptchaClass = 'ReCaptchaNoCaptcha';
+// $wgReCaptchaSiteKey = '6Lf1iGkUAAAAAJ1CVwO4LNqrNvN5KV9xMG91CtAu';
+// $wgReCaptchaSecretKey = '6Lf1iGkUAAAAAPD3gQI9J1J70eA765wRwTqE_OND';
+wfLoadExtension( 'ConfirmEdit/QuestyCaptcha' );
+$wgCaptchaClass = 'QuestyCaptcha';
 
-// $wgCaptchaClass = 'ReCaptcha';
-// $wgReCaptchaPublicKey = '6LfEemkUAAAAACUO_Qssbdj2s4JNZPABq_cv-Q29';
-// $wgReCaptchaPrivateKey = '6LfEemkUAAAAAGT5Zctds15qic_3EA4arE-_EiNW';
+// Add your questions in LocalSettings.php using this format
+$wgCaptchaQuestions[] = array( 'question' => "A question?", 'answer' => "An Answer");
+$wgCaptchaQuestions[] = array( 'question' => 'How much wood would a woodchuck chuck if a woodchuck could chuck wood?', 'answer' => 'as much wood as...' );
+$wgCaptchaQuestions[] = array( 'question' => "What is this wiki's name?", 'answer' => "BIT-wiki" );
+// You can also provide several acceptable answers to a given question (the answers shall be in lowercase):
+$wgCaptchaQuestions[] = array( 'question' => "2 + 2 ?", 'answer' => array( '4', 'four' ) );
 
 #######  End of Extension:ConfirmEdit
 
@@ -185,7 +218,63 @@ $wgMemCachedServers = array( "mem:11211" );
 $wgSessionsInObjectCache = true; # optional
 $wgSessionCacheType = CACHE_MEMCACHED; # optional
 
-######## Start of Memcached settings
+######## end of Memcached settings
+
+######## Start of Extension:hoststats
+$wgGroupPermissions['sysop']['hoststats'] = true;
+######## end of Extension:hoststats
+
+
+
+######## Start of Extension:UserCheck
+// 使管理员也拥有权限
+$wgGroupPermissions['sysop']['checkuser'] = true;
+
+$wgGroupPermissions['sysop']['checkuser-log'] = true;
+######## end of Extension:UserCheck
+
+######## Start of Extension:InterWiki
+$wgGroupPermissions['sysop']['interwiki'] = true;
+
+######## End of Extension:InterWiki
+
+######## Start of Extension:MsUpload
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+######## End of Extension:MsUpload
+
+######## Start of Extension:Usermerge
+$wgGroupPermissions['sysop']['usermerge'] = true;
+######## end of Extension:MsUpload
+
+######## Start of Extension:CodeMirror
+# Enables use of CodeMirror by default but still allow users to disable it
+$wgDefaultUserOptions['usecodemirror'] = 1;
+######## end of Extension:CodeMirror
+######## Start of Extension:AJAXPoll
+
+# anons
+# default: anons cannot vote and will never see results
+$wgGroupPermissions['*']['ajaxpoll-vote'] = false;
+$wgGroupPermissions['*']['ajaxpoll-view-results'] = false;
+$wgGroupPermissions['*']['ajaxpoll-view-results-before-vote'] = false;
+
+# users
+# default: users can vote and can see poll results - when they have voted
+$wgGroupPermissions['user']['ajaxpoll-vote'] = true;
+$wgGroupPermissions['user']['ajaxpoll-view-results'] = true;
+
+######## End of Extension:AJAXPoll
+
+
+#############  Start of Extension:lilypond
+
+wfLoadExtension( 'Score' );
+$wgScoreLilyPond = '/usr/local/bin/lilypond'; /* required */
+$wgScoreAbc2Ly = '/usr/local/bin/abc2ly'; /* if you want ABC to LilyPond conversion */
+$wgScoreTimidity = '/usr/bin/timidity'; /* if you want MIDI to Vorbis conversion */
+$wgScoreTrim = true; /* Set to false if you don't want score trimming */
+
+########  End of Extension:lilypond
 
 
 
@@ -193,7 +282,7 @@ $wgSessionCacheType = CACHE_MEMCACHED; # optional
 
 
 // OPTIONAL: Enable VisualEditor's experimental code features
-#$wgDefaultUserOptions['visualeditor-enable-experimental'] = 1;
+$wgDefaultUserOptions['visualeditor-enable-experimental'] = 1;
 require_once "$IP/extensions/VisualEditor/VisualEditor.php";
 
 $wgVisualEditorRestbaseURL = 'https://59.110.233.235:7231/localhost/v1/page/html/';
