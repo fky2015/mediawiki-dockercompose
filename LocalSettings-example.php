@@ -183,10 +183,10 @@ require_once( '$IP/extensions/WikiLove' );
 # Add more configuration options below.
 
 
-
-######################
+######################　be carefull when you try to modify the code above
+######################  the code above are genenrated when you install(init) the wiki
 ########################----------- self custom configuration below---------#####
-######################
+###################### the code below are make by us
 
 #######  Start  of  Extension:ConfirmEdit
 
@@ -202,6 +202,7 @@ $wgCaptchaClass = 'QuestyCaptcha';
 $wgCaptchaQuestions[] = array( 'question' => "A question?", 'answer' => "An Answer");
 $wgCaptchaQuestions[] = array( 'question' => 'How much wood would a woodchuck chuck if a woodchuck could chuck wood?', 'answer' => 'as much wood as...' );
 $wgCaptchaQuestions[] = array( 'question' => "What is this wiki's name?", 'answer' => "BIT-wiki" );
+$wgCaptchaQuestions[] = array( 'question' => "我们大学的缩写是？", "anser" => array('bit','BIT','北理工','北理') )
 // You can also provide several acceptable answers to a given question (the answers shall be in lowercase):
 $wgCaptchaQuestions[] = array( 'question' => "2 + 2 ?", 'answer' => array( '4', 'four' ) );
 
