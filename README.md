@@ -1,79 +1,22 @@
-# 
+# 诊所WIKI项目
 
-## parsoid
+利用`docker-compose`快速部署，持久运维`mediaWiki`
 
-- version `v0.9.0`
+## 项目简介
 
-## restbase
+这个项目的主要作用是利用`docker-compose`，提供了部署小型mediawiki的能力。其实在github上也有一个类似的项目，但是那个用到了`elasticsearch`，对内存占用较大。本来用到的`parsoid`，`restbase`的dockerfile也是自己写的，但是一直有配置问题，于是就使用了`github`上的项目。
 
-- version `v0.19.2`
+## 目录结构
 
-
-# 插件使用
-
-## [Extension:google Analysis Integretion](https://www.mediawiki.org/wiki/Extension:Google_Analytics_Integration)
-
-上面似乎说这个的比较老了, 推荐用headScript插入新的GA标签
-
-## [Extension:HeadScript](https://www.mediawiki.org/wiki/Extension:MsUpload)
-
-替换原有google的
-
-## [Extension:Info](https://www.mediawiki.org/wiki/Extension:Info/zh)
-
-The Info extension adds a info tab on all normal pages, that allows us to display the site information quickly.
-
-## [Extension:HostStats](https://www.mediawiki.org/wiki/Extension:HostStats/zh)
-
-注意权限配置
-
-## [Extension:NewUserMessage]()
-
-## [Extension:AntiSpoof](https://www.mediawiki.org/wiki/Extension:AntiSpoof/zh)
-需要另做设置, 更新php
-
-## [Extension:SocialProfile](https://www.mediawiki.org/wiki/Extension:SocialProfile)
-
-## [Extension:UserWelcome](https://www.mediawiki.org/wiki/Extension:UserWelcome)
-
-## [Extension:Linter](https://www.mediawiki.org/wiki/Extension:Linter/zh)
-## [Extension:Score](https://www.mediawiki.org/wiki/Extension:Score#Installation)
-
-可插入乐谱, 需要进一步配置.
-
-## [Extension:CiteThisPage](https://www.mediawiki.org/wiki/Extension:CiteThisPage)
-需要掌握一定的编辑能力才能使用
-
-## [Extesion:hoststats](https://www.mediawiki.org/wiki/Extension:HostStats)
-
-这个需要注意权限管理,应该不能给所有的sysop权限
-
-## [Extension:Lint](https://www.mediawiki.org/wiki/Extension:Linter#Configuration_parameters)
-
-需要用到 Parsoid,
-In your Parsoid config.yaml, set:
-```yaml
-        linting: true
-        linter:
-            sendAPI: true
-```
-
-
-## [Extension:Score](https://www.mediawiki.org/wiki/Extension:Score/zh#Installation)
-
-需要
-```
-lilypond
-Abc2Ly
-timidity
-```
-安装
-
-```bash
-curl -O http://lilypond.org/download/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
-
-# 进而安装 lilypond 与 Abc2Ly
-
-apt update && apt install timidity
-# 会安装timidity
-```
+- docs `存放文档`
+  - dev-documentation
+  - extensions-list
+- mediawiki ``
+  - assets `加入到 /var/www/html/resources/assets/`
+  - extensions `加入到 /var/www/html/extensions`
+  - skins `加入到 /var/www/html/skins`
+  - dockerfile
+- parsoid-docker `提供parsoid的dockerfile`
+- restbase-docker `提供restbase的dockerfile`
+- self-made-node-server `自己写的， 目前弃用`
+- LocalSettings-example.php `LocalSettings.php 的样例，其中自定义的部分非常重要`

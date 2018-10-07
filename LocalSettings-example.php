@@ -19,7 +19,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "BIT-wiki";
+$wgSitename = "BITNP-Clinic";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -29,7 +29,7 @@ $wgSitename = "BIT-wiki";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://no-171.tk:8088";
+$wgServer = "http://59.110.233.235:8088";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -43,8 +43,8 @@ $wgLogo = "$wgResourceBasePath/resources/assets/wiki.png";
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "apache@no-171.tk";
-$wgPasswordSender = "apache@no-171.tk";
+$wgEmergencyContact = "apache@59.110.233.235";
+$wgPasswordSender = "apache@59.110.233.235";
 
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
@@ -64,8 +64,8 @@ $wgDBprefix = "";
 $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_MEMCACHED;
-$wgMemCachedServers = [ 'mem:11211' ];
+# $wgMainCacheType = CACHE_MEMCACHED;
+# $wgMemCachedServers = [ 'mem:11211' ];
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
@@ -123,7 +123,7 @@ $wgDefaultSkin = "vector";
 
 # Enabled skins.
 # The following skins were automatically enabled:
-wfLoadSkin( 'MinervaNeue' );
+# wfLoadSkin( 'MinervaNeue' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
@@ -133,50 +133,50 @@ wfLoadSkin( 'Vector' );
 # wfLoadExtensions('ExtensionName');
 # to LocalSettings.php. Check specific extension documentation for more details.
 # The following extensions were automatically enabled:
-wfLoadExtension( 'AJAXPoll' );
-wfLoadExtension( 'AntiSpoof' );
-wfLoadExtension( 'CategoryTree' );
-wfLoadExtension( 'CheckUser' );
-wfLoadExtension( 'Cite' );
-wfLoadExtension( 'CiteThisPage' );
-wfLoadExtension( 'CodeEditor' );
-wfLoadExtension( 'CodeMirror' );
-wfLoadExtension( 'ConfirmEdit' );
+require_once( '$IP/extensions/AJAXPoll/AJAXPoll' );
+require_once( '$IP/extensions/AntiSpoof/AntiSpoof' );
+require_once( '$IP/extensions/CategoryTree/CategoryTree' );
+require_once( '$IP/extensions/CheckUser/CheckUser' );
+require_once( '$IP/extensions/Cite/Cite' );
+require_once( '$IP/extensions/CiteThisPage/CiteThisPage' );
+require_once( '$IP/extensions/CodeEditor/CodeEditor' );
+require_once( '$IP/extensions/CodeMirror/CodeMirror' );
+require_once( '$IP/extensions/ConfirmEdit/ConfirmEdit' );
 require_once "$IP/extensions/ContributionScores/ContributionScores.php";
-wfLoadExtension( 'Disambiguator' );
-wfLoadExtension( 'Echo' );
-wfLoadExtension( 'Gadgets' );
+require_once( '$IP/extensions/Disambiguator/Disambiguator' );
+require_once( '$IP/extensions/Echo/Echo' );
+require_once( '$IP/extensions/Gadgets/Gadgets' );
 require_once "$IP/extensions/googleAnalytics/googleAnalytics.php";
-wfLoadExtension( 'HostStats' );
-wfLoadExtension( 'ImageMap' );
-wfLoadExtension( 'InputBox' );
-wfLoadExtension( 'Interwiki' );
-wfLoadExtension( 'Linter' );
-wfLoadExtension( 'LocalisationUpdate' );
-wfLoadExtension( 'Math' );
-wfLoadExtension( 'MobileFrontend' );
-wfLoadExtension( 'MsUpload' );
-wfLoadExtension( 'MultiBoilerplate' );
-wfLoadExtension( 'MultimediaViewer' );
-wfLoadExtension( 'Nuke' );
-wfLoadExtension( 'OATHAuth' );
-wfLoadExtension( 'ParserFunctions' );
-wfLoadExtension( 'PdfHandler' );
-wfLoadExtension( 'PinyinSort' );
-wfLoadExtension( 'Poem' );
-wfLoadExtension( 'Renameuser' );
-wfLoadExtension( 'ReplaceText' );
-wfLoadExtension( 'RevisionSlider' );
-wfLoadExtension( 'Score' );
+require_once( '$IP/extensions/HostStats' );
+require_once( '$IP/extensions/ImageMap' );
+require_once( '$IP/extensions/InputBox' );
+require_once( '$IP/extensions/Interwiki' );
+require_once( '$IP/extensions/Linter' );
+require_once( '$IP/extensions/LocalisationUpdate' );
+require_once( '$IP/extensions/Math' );
+require_once( '$IP/extensions/MobileFrontend' );
+require_once( '$IP/extensions/MsUpload' );
+require_once( '$IP/extensions/MultiBoilerplate' );
+require_once( '$IP/extensions/MultimediaViewer' );
+require_once( '$IP/extensions/Nuke' );
+require_once( '$IP/extensions/OATHAuth' );
+require_once( '$IP/extensions/ParserFunctions' );
+require_once( '$IP/extensions/PdfHandler' );
+require_once( '$IP/extensions/PinyinSort' );
+require_once( '$IP/extensions/Poem' );
+require_once( '$IP/extensions/Renameuser' );
+require_once( '$IP/extensions/ReplaceText' );
+require_once( '$IP/extensions/RevisionSlider' );
+require_once( '$IP/extensions/Score' );
 require_once "$IP/extensions/SocialProfile/SocialProfile.php";
-wfLoadExtension( 'SpamBlacklist' );
-wfLoadExtension( 'SyntaxHighlight_GeSHi' );
-wfLoadExtension( 'Thanks' );
-wfLoadExtension( 'TitleBlacklist' );
-wfLoadExtension( 'UserMerge' );
-wfLoadExtension( 'VisualEditor' );
-wfLoadExtension( 'WikiEditor' );
-wfLoadExtension( 'WikiLove' );
+require_once( '$IP/extensions/SpamBlacklist' );
+require_once( '$IP/extensions/SyntaxHighlight_GeSHi' );
+require_once( '$IP/extensions/Thanks' );
+require_once( '$IP/extensions/TitleBlacklist' );
+require_once( '$IP/extensions/UserMerge' );
+require_once( '$IP/extensions/VisualEditor' );
+require_once( '$IP/extensions/WikiEditor' );
+require_once( '$IP/extensions/WikiLove' );
 
 
 # End of automatically generated settings.
@@ -184,13 +184,14 @@ wfLoadExtension( 'WikiLove' );
 
 
 
-########################----------------sadfasdfasfsadfsafdasfasdfasfdasfd----#####
-
+######################
+########################----------- self custom configuration below---------#####
+######################
 
 #######  Start  of  Extension:ConfirmEdit
 
 # 在默认配置中也有这个配置, 也许需要删除原有的, 也许不需要
-// wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
+// require_onces([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
 // $wgCaptchaClass = 'ReCaptchaNoCaptcha';
 // $wgReCaptchaSiteKey = '6Lf1iGkUAAAAAJ1CVwO4LNqrNvN5KV9xMG91CtAu';
 // $wgReCaptchaSecretKey = '6Lf1iGkUAAAAAPD3gQI9J1J70eA765wRwTqE_OND';
@@ -206,7 +207,7 @@ $wgCaptchaQuestions[] = array( 'question' => "2 + 2 ?", 'answer' => array( '4', 
 
 #######  End of Extension:ConfirmEdit
 
-wfLoadExtension( 'MobileFrontend' );
+require_once( "$IP/extensions/MobileFrontend/MobileFrontend.alias.php" );
 $wgMFAutodetectMobileView = true;
 
 ######## Start of Memcached settings
@@ -288,8 +289,8 @@ require_once "$IP/extensions/VisualEditor/VisualEditor.php";
 $wgVisualEditorRestbaseURL = 'https://59.110.233.235:7231/localhost/v1/page/html/';
 $wgVisualEditorFullRestbaseURL = 'http://59.110.233.235:7231/localhost/';
 // $wgVirtualRestConfig['modules']['restbase'] = [
-// 	'url' => 'http://59.110.233.235:7231',
-// 	'domain' => 'localhost',
+//  'url' => 'http://59.110.233.235:7231',
+//  'domain' => 'localhost',
 //   'parsoidCompat' => true
 //   ];
 
@@ -305,4 +306,3 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
 
 $wgDefaultUserOptions['visualeditor-enable'] = 1;
 $wgLogo="/resources/assets/bit.jpg";
-
