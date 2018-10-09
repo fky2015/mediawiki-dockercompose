@@ -24,6 +24,8 @@ services:
       MYSQL_USER: wikiuser
       MYSQL_PASSWORD: example
       MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mediawiki-datavolume:/var/lib/mysql
   parsoid:
     build: parsoid-docker/
     environment:
@@ -44,3 +46,5 @@ services:
     image: memcached
     expose: 
       - 11211
+volumes:
+  mediawiki-datavolume:
