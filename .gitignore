@@ -1,4 +1,4 @@
 mediawiki/extensions/*
 mediawiki/skins/*
-mediawiki/assets/*
+# mediawiki/assets/*
 private*

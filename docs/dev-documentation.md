@@ -29,6 +29,7 @@
 ### 刚安装后
 
 `php maintenance/update.php`
+修改favicon和logo
 
 ---
 
