@@ -11,7 +11,6 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
     && apk update \
     && apk add --no-cache git \
-    && npm install -g cnpm --registry=https://registry.npm.taobao.org \
     && npm install -g --only=production parsoid@${PARSOID_VERSION} \
     && cnpm cache clean --force \
     && rm -rf /tmp/npm* /root/.node* /root/.npm
