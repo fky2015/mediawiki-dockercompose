@@ -14,7 +14,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && apk update \
     && apk add --no-cache git \
     && npm install -g --only=production restbase@${RESTBASE_VERSION} restbase-mod-table-sqlite \
-    && cnpm cache clean --force \
+    && npm cache clean --force \
     && rm -rf /tmp/npm* /root/.node* /root/.npm
 
 CMD ["node", "/usr/local/lib/node_modules/restbase/server.js", "--config=/config.yaml"]

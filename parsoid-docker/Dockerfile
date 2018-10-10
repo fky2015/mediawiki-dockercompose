@@ -12,7 +12,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && apk update \
     && apk add --no-cache git \
     && npm install -g --only=production parsoid@${PARSOID_VERSION} \
-    && cnpm cache clean --force \
+    && npm cache clean --force \
     && rm -rf /tmp/npm* /root/.node* /root/.npm
 
 CMD ["node", "/usr/local/lib/node_modules/parsoid/bin/server.js", "--config=/config.yaml"]
