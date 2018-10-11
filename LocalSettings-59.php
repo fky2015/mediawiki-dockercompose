@@ -29,22 +29,21 @@ $wgSitename = "BIT-Clinic";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://10.1.139.123:8088";
+$wgServer = "http://59.110.233.235:8088";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
 
 ## The URL path to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
-$wgLogo = "$wgResourceBasePath/resources/assets/wiki.png";
 
 ## UPO means: this is also a user preference option
 
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "apache@10.1.139.123";
-$wgPasswordSender = "apache@10.1.139.123";
+$wgEmergencyContact = "apache@59.110.233.235";
+$wgPasswordSender = "apache@59.110.233.235";
 
 $wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO
@@ -55,7 +54,7 @@ $wgDBtype = "mysql";
 $wgDBserver = "database";
 $wgDBname = "my_wiki";
 $wgDBuser = "root";
-$wgDBpassword = "passwordthat1use";
+$wgDBpassword = "password";
 
 # MySQL specific settings
 $wgDBprefix = "";
@@ -186,13 +185,13 @@ require_once( "$IP/extensions/MobileFrontend/MobileFrontend.alias.php" );
 $wgMFAutodetectMobileView = true;
 
 ######## Start of Memcached settings
-// $wgMainCacheType = CACHE_MEMCACHED;
-// $wgParserCacheType = CACHE_MEMCACHED; # optional
-// $wgMessageCacheType = CACHE_MEMCACHED; # optional
-// $wgMemCachedServers = array( "mem:11211" );
+$wgMainCacheType = CACHE_MEMCACHED;
+$wgParserCacheType = CACHE_MEMCACHED; # optional
+$wgMessageCacheType = CACHE_MEMCACHED; # optional
+$wgMemCachedServers = array( "mem:11211" );
 
-// $wgSessionsInObjectCache = true; # optional
-// $wgSessionCacheType = CACHE_MEMCACHED; # optional
+$wgSessionsInObjectCache = true; # optional
+$wgSessionCacheType = CACHE_MEMCACHED; # optional
 
 ######## end of Memcached settings
 
@@ -258,21 +257,21 @@ $wgScoreTrim = true; /* Set to false if you don't want score trimming */
 
 
 // OPTIONAL: Enable VisualEditor's experimental code features
-$wgDefaultUserOptions['visualeditor-enable-experimental'] = 1;
+$wgDefaultUserOptions['visualeditor-enable-experimental'] = 0;
 require_once "$IP/extensions/VisualEditor/VisualEditor.php";
 
-$wgVisualEditorRestbaseURL = 'http://10.1.139.123:7231/localhost/v1/page/html/';
-$wgVisualEditorFullRestbaseURL = 'http://10.1.139.123:7231/localhost/';
-// $wgVirtualRestConfig['modules']['restbase'] = [
-//  'url' => 'http://10.1.139.123:7231',
-//  'domain' => 'localhost',
-//   'parsoidCompat' => true
-//   ];
+$wgVisualEditorRestbaseURL = 'https://59.110.233.235:7231/localhost/v1/page/html/';
+$wgVisualEditorFullRestbaseURL = 'http://59.110.233.235:7231/localhost/';
+$wgVirtualRestConfig['modules']['restbase'] = [
+ 'url' => 'http://59.110.233.235:7231',
+ 'domain' => 'localhost',
+  'parsoidCompat' => true
+  ];
 
 $wgVirtualRestConfig['modules']['parsoid'] = array(
     // URL to the Parsoid instance
     // Use port 8142 if you use the Debian package
-    'url' => 'http://10.1.139.123:8000/',
+    'url' => 'http://parsoid:8000/',
     // Parsoid "domain", see below (optional)
     'domain' => 'localhost',
     // Parsoid "prefix", see below (optional)
