@@ -215,7 +215,7 @@ $wgCaptchaQuestions[] = array( 'question' => "良乡最北边的教学楼是什�
 
 #######  End of Extension:ConfirmEdit
 
-require_once( "$IP/extensions/MobileFrontend/MobileFrontend.alias.php" );
+// require_once( "$IP/extensions/MobileFrontend/MobileFrontend.alias.php" );
 $wgMFAutodetectMobileView = true;
 
 ######## Start of Memcached settings
@@ -297,7 +297,7 @@ $wgDefaultUserOptions['visualeditor-enable-experimental'] = 0;
 // require_once "$IP/extensions/VisualEditor/VisualEditor.php";
 
 $wgVisualEditorRestbaseURL = 'https://10.1.139.123:7231/localhost/v1/page/html/';
-$wgVisualEditorFullRestbaseURL = 'http://10.1.139.123:7231/localhost/v1/';
+$wgVisualEditorFullRestbaseURL = 'http://10.1.139.123:7231/localhost/';
 $wgVirtualRestConfig['modules']['restbase'] = [
  'url' => 'http://restbase:7231',
  'domain' => 'localhost',
@@ -323,7 +323,7 @@ $wgMathValidModes[] = 'mathml';
 // Set Mathoid as default rendering option;
 $wgDefaultUserOptions['math'] = 'mathml';
 $wgMathMathMLUrl = 'http://mathmoid:10044/'; # IP of Mathoid server
-$wgMathFullRestbaseURL = 'http://restbase:7231/localhost/v1/';
+$wgMathFullRestbaseURL = 'http://10.1.139.123:7231/localhost/';
 #####
 
 

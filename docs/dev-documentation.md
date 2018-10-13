@@ -41,6 +41,15 @@ chown www-data:www-data image -R
 `php maintenance/update.php`
 修改favicon和logo
 
+### 2018-10-13 关于 node-services 修改
+
+今天龙神找我谈到关于mathjax的事情,然后我想起来我也没有配置数学编辑器.
+配置过程中发现mathjax其实已经不支持了,连simplemath也有了问题.
+所以打算使用mathoid,然后发现其实是math插件调用mathoid服务进行公式渲染.
+然后发现配置完mathoid之后始终报错`Math extension cannot connect to Restbase.`
+后来对比wikipeida的restbase api才明白, restbase是要特殊配置的,所以老的restbase就不行了
+所以打算使用新的node-services(官方出品)
+
 ---
 
 ## 插件使用

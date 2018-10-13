@@ -30,8 +30,8 @@ services:
     build: parsoid-docker/
     environment:
       MEDIAWIKI_API_URL: http://mediawiki:80/api.php
-      MEDIAWIKI_DOMAIN: mediawiki
-      MEDIAWIKI_PREFIX: mediawiki
+      MEDIAWIKI_DOMAIN: localhost
+      MEDIAWIKI_PREFIX: localhost
     ports:
       - 8000:8000
   restbase:
