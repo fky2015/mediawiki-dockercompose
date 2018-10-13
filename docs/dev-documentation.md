@@ -96,11 +96,13 @@ In your Parsoid config.yaml, set:
 ## [Extension:Score](https://www.mediawiki.org/wiki/Extension:Score/zh#Installation)
 
 需要
-```
+
+```bash
 lilypond
 Abc2Ly
 timidity
 ```
+
 安装
 
 ```bash
@@ -111,3 +113,5 @@ curl -O http://lilypond.org/download/binaries/linux-64/lilypond-2.18.2-1.linux-6
 apt update && apt install timidity
 # 会安装timidity
 ```
+
+因为目前没有需求, 所以没用直接安装在docker中
