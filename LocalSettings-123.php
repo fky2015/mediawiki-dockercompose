@@ -297,7 +297,7 @@ $wgDefaultUserOptions['visualeditor-enable-experimental'] = 0;
 // require_once "$IP/extensions/VisualEditor/VisualEditor.php";
 
 $wgVisualEditorRestbaseURL = 'https://10.1.139.123:7231/localhost/v1/page/html/';
-$wgVisualEditorFullRestbaseURL = 'http://10.1.139.123:7231/localhost/';
+$wgVisualEditorFullRestbaseURL = 'http://10.1.139.123:7231/localhost/v1/';
 $wgVirtualRestConfig['modules']['restbase'] = [
  'url' => 'http://restbase:7231',
  'domain' => 'localhost',
@@ -323,7 +323,7 @@ $wgMathValidModes[] = 'mathml';
 // Set Mathoid as default rendering option;
 $wgDefaultUserOptions['math'] = 'mathml';
 $wgMathMathMLUrl = 'http://mathmoid:10044/'; # IP of Mathoid server
-$wgMathFullRestbaseURL = 'http://restbase:7231/localhost/';
+$wgMathFullRestbaseURL = 'http://restbase:7231/localhost/v1/';
 #####
 
 
