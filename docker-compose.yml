@@ -27,7 +27,7 @@ services:
     volumes:
       - mediawiki-datavolume:/var/lib/mysql
   node-services:
-    build: node-services/
+    image: wikimedia/mediawiki-node-services
     ports:
       - 7231:7231
       - 8000:8142
