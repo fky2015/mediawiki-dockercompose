@@ -40,7 +40,7 @@ services:
     image: memcached
     expose: 
       - 11211
-  mathmoid:
+  mathoid:
     image: nlpub/mathoid
 volumes:
   mediawiki-datavolume:
