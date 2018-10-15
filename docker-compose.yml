@@ -26,18 +26,11 @@ services:
       MYSQL_ROOT_PASSWORD: password
     volumes:
       - mediawiki-datavolume:/var/lib/mysql
-  parsoid:
-    build: parsoid-docker/
-    environment:
-      MEDIAWIKI_API_URL: http://mediawiki:80/api.php
-      MEDIAWIKI_DOMAIN: localhost
-      MEDIAWIKI_PREFIX: localhost
-    ports:
-      - 8000:8000
-  restbase:
-    build: restbase-docker/
+  node-services:
+    build: node-services/
     ports:
       - 7231:7231
+      - 8000:8142
     environment:
       MEDIAWIKI_API_URL: http://mediawiki/api.php
       MEDIAWIKI_URL: http://mediawiki

@@ -1,0 +1,6 @@
+[submodule "mediawiki-node-services"]
+	path = mediawiki-node-services
+	url = https://github.com/wikimedia/mediawiki-node-services
+[submodule "node-services"]
+	path = node-services
+	url = https://github.com/wikimedia/mediawiki-node-services

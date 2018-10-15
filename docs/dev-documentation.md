@@ -50,6 +50,8 @@ chown www-data:www-data image -R
 后来对比wikipeida的restbase api才明白, restbase是要特殊配置的,所以老的restbase就不行了
 所以打算使用新的node-services(官方出品)
 
+`https://github.com/wikimedia/mediawiki-node-services`
+
 ---
 
 ## 插件使用
