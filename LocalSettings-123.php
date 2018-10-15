@@ -307,7 +307,7 @@ $wgVirtualRestConfig['modules']['restbase'] = [
 $wgVirtualRestConfig['modules']['parsoid'] = array(
     // URL to the Parsoid instance
     // Use port 8142 if you use the Debian package
-    'url' => 'http://parsoid:8000/',
+    'url' => 'http://node-services:8000/',
     // Parsoid "domain", see below (optional)
     'domain' => 'localhost',
     // Parsoid "prefix", see below (optional)
@@ -322,7 +322,7 @@ $wgMathValidModes[] = 'mathml';
 
 // Set Mathoid as default rendering option;
 $wgDefaultUserOptions['math'] = 'mathml';
-$wgMathMathMLUrl = 'http://mathmoid:10044/'; # IP of Mathoid server
+$wgMathMathMLUrl = 'http://node-services:7231/'; # IP of Mathoid server
 $wgMathFullRestbaseURL = 'http://10.1.139.123:7231/localhost/';
 #####
 

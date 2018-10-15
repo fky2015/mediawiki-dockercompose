@@ -35,6 +35,7 @@ services:
       MEDIAWIKI_API_URL: http://mediawiki/api.php
       MEDIAWIKI_URL: http://mediawiki
       PARSOID_URL: http://parsoid:8000
+      MATHOID_HOST_PORT: http://mathmoid:10044
   mem:
     image: memcached
     expose: 
