@@ -23,17 +23,13 @@
 ```
 
 ### 明明有这个插件却说没有extensions.json, 用了require_once却说permission denied
+### avatar 等 图像类插件无法使用
 
 修改权限
 ```bash
-chown www-data:www-data extension skin -R
-chmod 754  extension skin -R
-```
+chown www-data:www-data extensions skins images resources -R
+chmod 755  extensions skins images resources -R
 
-### avatar 等 图像类插件无法使用
-
-```bash
-chown www-data:www-data image -R
 ```
 
 ### 刚安装后

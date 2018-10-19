@@ -36,6 +36,7 @@ $wgResourceBasePath = $wgScriptPath;
 
 ## The URL path to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
+$wgLogo = "$wgResourceBasePath/resources/assets/wiki.png";
 
 ## UPO means: this is also a user preference option
 
@@ -78,7 +79,7 @@ $wgUseInstantCommons = true;
 # Periodically send a pingback to https://www.mediawiki.org/ with basic data
 # about this MediaWiki instance. The Wikimedia Foundation shares this data
 # with MediaWiki developers to help guide future development efforts.
-$wgPingback = false;
+$wgPingback = true;
 
 ## If you use ImageMagick (or any other shell command) on a
 ## Linux server, this will need to be set to the name of an
@@ -93,14 +94,14 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "zh-cn";
 
-$wgSecretKey = "71608949abe174ad3abcec1995ad981408996512489f70c953284f1ee69f14a5";
+$wgSecretKey = "f5bf64c6e8f8ab32bb219839efddb875184dba8825c0dc58c6e5f8d42bb83b29";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "e41cc19ebbf873b8";
+$wgUpgradeKey = "57e35c01df6f1e4b";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -123,6 +124,7 @@ $wgDefaultSkin = "vector";
 
 # Enabled skins.
 # The following skins were automatically enabled:
+wfLoadSkin( 'MinervaNeue' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
@@ -132,28 +134,59 @@ wfLoadSkin( 'Vector' );
 # wfLoadExtensions('ExtensionName');
 # to LocalSettings.php. Check specific extension documentation for more details.
 # The following extensions were automatically enabled:
+wfLoadExtension( 'AJAXPoll' );
+wfLoadExtension( 'AntiSpoof' );
+wfLoadExtension( 'CategoryTree' );
+wfLoadExtension( 'CheckUser' );
 wfLoadExtension( 'Cite' );
 wfLoadExtension( 'CiteThisPage' );
 wfLoadExtension( 'CodeEditor' );
+wfLoadExtension( 'CodeMirror' );
 wfLoadExtension( 'ConfirmEdit' );
+require_once "$IP/extensions/ContributionScores/ContributionScores.php";
+wfLoadExtension( 'Disambiguator' );
+wfLoadExtension( 'Echo' );
 wfLoadExtension( 'Gadgets' );
+require_once "$IP/extensions/googleAnalytics/googleAnalytics.php";
+wfLoadExtension( 'HostStats' );
 wfLoadExtension( 'ImageMap' );
+require_once "$IP/extensions/Info/Info.php";
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'Interwiki' );
+wfLoadExtension( 'Linter' );
 wfLoadExtension( 'LocalisationUpdate' );
+wfLoadExtension( 'Math' );
+wfLoadExtension( 'MobileFrontend' );
+wfLoadExtension( 'MsUpload' );
+wfLoadExtension( 'MultiBoilerplate' );
 wfLoadExtension( 'MultimediaViewer' );
+wfLoadExtension( 'Nuke' );
 wfLoadExtension( 'OATHAuth' );
 wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'PdfHandler' );
+wfLoadExtension( 'PinyinSort' );
 wfLoadExtension( 'Poem' );
+wfLoadExtension( 'Renameuser' );
 wfLoadExtension( 'ReplaceText' );
+wfLoadExtension( 'RevisionSlider' );
+wfLoadExtension( 'Score' );
+wfLoadExtension( 'SimpleMathJax' );
+require_once "$IP/extensions/SocialProfile/SocialProfile.php";
 wfLoadExtension( 'SpamBlacklist' );
+wfLoadExtension( 'SyntaxHighlight_GeSHi' );
+wfLoadExtension( 'Thanks' );
 wfLoadExtension( 'TitleBlacklist' );
+wfLoadExtension( 'UserMerge' );
+wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
+wfLoadExtension( 'WikiLove' );
 
 
 # End of automatically generated settings.
 # Add more configuration options below.
+
+
+
 
 
 ######################　be carefull when you try to modify the code above
@@ -172,16 +205,17 @@ wfLoadExtension( 'ConfirmEdit/QuestyCaptcha' );
 $wgCaptchaClass = 'QuestyCaptcha';
 
 // Add your questions in LocalSettings.php using this format
-$wgCaptchaQuestions[] = array( 'question' => "A question?", 'answer' => "An Answer");
+$wgCaptchaQuestions[] = array( 'question' => "A question?", 'answer' => ["An Answer", "An Answer."]);
 $wgCaptchaQuestions[] = array( 'question' => 'How much wood would a woodchuck chuck if a woodchuck could chuck wood?', 'answer' => 'as much wood as...' );
-$wgCaptchaQuestions[] = array( 'question' => "What is this wiki's name?", 'answer' => "BIT-wiki" );
+$wgCaptchaQuestions[] = array( 'question' => "What is this wiki's name?", 'answer' => "BITNP-Clinic" );
 $wgCaptchaQuestions[] = array( 'question' => "我们大学的缩写是？", "anser" => array('bit','BIT','北理工','北理') );
 // You can also provide several acceptable answers to a given question (the answers shall be in lowercase):
-$wgCaptchaQuestions[] = array( 'question' => "2 + 2 ?", 'answer' => array( '4', 'four' ) );
+$wgCaptchaQuestions[] = array( 'question' => "2 + 2 - 2 - 2 + 2 + 2?", 'answer' => array( '4', 'four' ) );
+$wgCaptchaQuestions[] = array( 'question' => "良乡最北边的教学楼是什么", 'answer' => array( '丹枫', '丹枫楼' ) );
 
 #######  End of Extension:ConfirmEdit
 
-require_once( "$IP/extensions/MobileFrontend/MobileFrontend.alias.php" );
+// require_once( "$IP/extensions/MobileFrontend/MobileFrontend.alias.php" );
 $wgMFAutodetectMobileView = true;
 
 ######## Start of Memcached settings
@@ -251,19 +285,21 @@ $wgScoreTrim = true; /* Set to false if you don't want score trimming */
 
 ########  End of Extension:lilypond
 
+#############  Start of Extension:lilypond
+
+$wgDefaultAvatar = '/resources/assets/bitnp-trans.png';
 
 
-
-
+########  End of Extension:lilypond
 
 // OPTIONAL: Enable VisualEditor's experimental code features
 $wgDefaultUserOptions['visualeditor-enable-experimental'] = 0;
-require_once "$IP/extensions/VisualEditor/VisualEditor.php";
+// require_once "$IP/extensions/VisualEditor/VisualEditor.php";
 
 $wgVisualEditorRestbaseURL = 'https://59.110.233.235:7231/localhost/v1/page/html/';
 $wgVisualEditorFullRestbaseURL = 'http://59.110.233.235:7231/localhost/';
 $wgVirtualRestConfig['modules']['restbase'] = [
- 'url' => 'http://59.110.233.235:7231',
+ 'url' => 'http://node-services:7231',
  'domain' => 'localhost',
   'parsoidCompat' => true
   ];
@@ -271,7 +307,7 @@ $wgVirtualRestConfig['modules']['restbase'] = [
 $wgVirtualRestConfig['modules']['parsoid'] = array(
     // URL to the Parsoid instance
     // Use port 8142 if you use the Debian package
-    'url' => 'http://parsoid:8000/',
+    'url' => 'http://node-services:8000/',
     // Parsoid "domain", see below (optional)
     'domain' => 'localhost',
     // Parsoid "prefix", see below (optional)
@@ -279,5 +315,19 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
 );
 
 $wgDefaultUserOptions['visualeditor-enable'] = 1;
-$wgLogo="/resources/assets/bitnp-trans.jpg";
+
+###### math
+// ensure 'mathml'; is added to the $wgMathValidModes array;
+$wgMathValidModes[] = 'mathml';
+
+// Set Mathoid as default rendering option;
+$wgDefaultUserOptions['math'] = 'mathml';
+$wgMathMathMLUrl = 'http://node-services:7231/'; # IP of Mathoid server
+$wgMathFullRestbaseURL = 'http://59.110.233.235:7231/localhost/';
+#####
+
+
+
+
+$wgLogo="/resources/assets/bitnp-trans.png";
 $wgFavicon = "/resources/assets/favicon.ico";

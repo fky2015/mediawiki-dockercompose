@@ -20,3 +20,9 @@
 - restbase-docker `提供restbase的dockerfile`
 - self-made-node-server `自己写的， 目前弃用`
 - LocalSettings-example.php `LocalSettings.php 的样例，其中自定义的部分非常重要`
+
+
+## 注意
+
+- 请把 docker-compose 中 restbase 和 parsoid 用gitlab的镜像
+- LocalSettings-123.php 是校内的最全的配置

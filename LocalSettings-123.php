@@ -299,7 +299,7 @@ $wgDefaultUserOptions['visualeditor-enable-experimental'] = 0;
 $wgVisualEditorRestbaseURL = 'https://10.1.139.123:7231/localhost/v1/page/html/';
 $wgVisualEditorFullRestbaseURL = 'http://10.1.139.123:7231/localhost/';
 $wgVirtualRestConfig['modules']['restbase'] = [
- 'url' => 'http://restbase:7231',
+ 'url' => 'http://node-services:7231',
  'domain' => 'localhost',
   'parsoidCompat' => true
   ];
